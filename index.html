@@ -6,154 +6,319 @@
 <title>Pakija Shringar Place - Khaspur Tanda, Ambedkar Nagar</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Segoe UI',Tahoma,sans-serif;background:#f1f3f6}
-.header{background:linear-gradient(135deg,#d63384,#c2185b);color:white;padding:18px 15px;text-align:center;position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,0.15)}
-.shop-name{font-size:26px;font-weight:700;margin-bottom:4px}
-.shop-tagline{font-size:13px;opacity:0.95}
-.container{max-width:520px;margin:0 auto;padding:12px}
-.product-card{background:white;border-radius:12px;margin:16px 0;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.08)}
-.product-card img{width:100%;height:300px;object-fit:cover;background:#f8f8f8}
-.info{padding:16px}
-.name{font-size:17px;font-weight:600;color:#212121;margin-bottom:8px;line-height:1.3}
-.price-row{display:flex;align-items:center;gap:8px;margin-bottom:12px;flex-wrap:wrap}
-.price{font-size:22px;font-weight:700;color:#000}
-.price::before{content:"₹"}
-.mrp{font-size:15px;color:#878787;text-decoration:line-through}
-.mrp::before{content:"₹"}
-.discount{color:#388e3c;font-size:14px;font-weight:600}
-.badge{background:#ff6161;color:white;font-size:12px;padding:4px 10px;border-radius:4px;display:inline-block;margin-bottom:10px;font-weight:600}
+body{font-family:Roboto,Arial,sans-serif;background:#f1f3f6}
+.header{background:#d63384;color:white;position:sticky;top:0;z-index:100}
+.top-bar{padding:12px 15px;display:flex;align-items:center;justify-content:space-between}
+.shop-name{font-size:20px;font-weight:700}
+.location{font-size:11px;opacity:0.9;display:flex;align-items:center;gap:4px}
+.search-bar{background:white;margin:0 12px 12px;border-radius:8px;display:flex;align-items:center;padding:0 12px}
+.search-bar input{flex:1;border:none;padding:12px 8px;font-size:15px;outline:none}
+.search-icon{color:#878787}
+.category-bar{background:white;display:flex;overflow-x:auto;padding:8px 0;border-bottom:1px solid #e0e0e0}
+.category-item{min-width:75px;text-align:center;padding:8px 5px;font-size:12px;color:#212121;cursor:pointer}
+.category-item.active{color:#d63384;font-weight:600;border-bottom:2px solid #d63384}
+.cat-icon{font-size:24px;margin-bottom:4px}
+.banner{margin:12px;background:linear-gradient(135deg,#ff6b9d,#c44569);border-radius:12px;padding:20px;color:white;text-align:center}
+.banner h2{font-size:22px;margin-bottom:5px}
+.banner p{font-size:13px;opacity:0.9}
+.container{max-width:600px;margin:0 auto;padding:0 12px 12px}
+.section-title{font-size:18px;font-weight:600;color:#212121;margin:16px 0 12px;padding-left:4px}
+.product-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.product-card{background:white;border-radius:8px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,0.12)}
+.product-card img{width:100%;height:180px;object-fit:cover;background:#f5f5f5}
+.p-info{padding:10px}
+.p-name{font-size:13px;color:#212121;line-height:1.3;height:35px;overflow:hidden;margin-bottom:6px}
+.p-price{font-size:16px;font-weight:700;color:#000}
+.p-price::before{content:"₹"}
+.p-mrp{font-size:12px;color:#878787;text-decoration:line-through;margin-left:5px}
+.p-mrp::before{content:"₹"}
+.p-discount{color:#388e3c;font-size:11px;font-weight:600;margin-top:2px}
+.p-badge{background:#d63384;color:white;font-size:10px;padding:2px 6px;border-radius:3px;display:inline-block;margin-bottom:5px}
+.order-btn{display:block;width:100%;padding:8px;background:#ff9f00;color:white;text-align:center;border:none;border-radius:4px;font-size:13px;font-weight:600;margin-top:8px;cursor:pointer}
+.modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);z-index:999;align-items:center;justify-content:center}
+.modal.active{display:flex}
+.modal-content{background:white;width:90%;max-width:400px;border-radius:12px;padding:20px;max-height:90vh;overflow-y:auto}
+.modal-header{font-size:18px;font-weight:600;margin-bottom:15px;color:#212121}
+.close-btn{float:right;font-size:28px;cursor:pointer;color:#878787;line-height:20px}
 .form-group{margin-bottom:12px}
 .form-group label{font-size:13px;color:#333;display:block;margin-bottom:5px;font-weight:600}
 .form-group label span{color:#d63384}
-.form-group input,.form-group textarea{width:100%;padding:11px;border:1.5px solid #ddd;border-radius:8px;font-size:15px;font-family:inherit;transition:border 0.2s}
+.form-group input,.form-group textarea{width:100%;padding:11px;border:1.5px solid #ddd;border-radius:8px;font-size:15px;font-family:inherit}
 .form-group input:focus,.form-group textarea:focus{outline:none;border-color:#d63384}
 .form-group textarea{resize:vertical;min-height:70px}
-.btn{display:block;width:100%;padding:14px;background:#25d366;color:white;text-align:center;text-decoration:none;font-weight:700;border-radius:8px;font-size:16px;border:none;cursor:pointer;margin-top:8px;transition:transform 0.1s}
-.btn:active{transform:scale(0.98)}
-.btn.call{background:#d63384;margin-top:10px}
-.footer{background:white;margin-top:20px;padding:24px 16px;text-align:center;border-radius:12px}
-.address{background:#fff3f8;padding:16px;border-radius:10px;margin:16px 0;border:2px solid #ffcce5;text-align:left}
-.address strong{color:#d63384;font-size:15px}
-.shop-info{color:#666;font-size:14px;line-height:1.8;margin:12px 0}
-.divider{height:1px;background:#eee;margin:20px 0}
+.submit-btn{width:100%;padding:14px;background:#25d366;color:white;border:none;border-radius:8px;font-size:16px;font-weight:700;cursor:pointer;margin-top:8px}
+.footer{background:white;margin-top:20px;padding:20px 16px;text-align:center}
+.footer-links{display:flex;justify-content:center;gap:20px;margin-bottom:15px;font-size:13px}
+.footer-links a{color:#2874f0;text-decoration:none}
+.shop-details{color:#666;font-size:12px;line-height:1.8}
 </style>
 </head>
 <body>
 <div class="header">
-  <div class="shop-name">Pakija Shringar Place</div>
-  <div class="shop-tagline">Best Quality | Affordable Price | Trusted Shop</div>
+  <div class="top-bar">
+    <div>
+      <div class="shop-name">Pakija Shringar Place</div>
+      <div class="location">📍 Khaspur Tanda, Ambedkar Nagar</div>
+    </div>
+    <div style="font-size:20px">🛒</div>
+  </div>
+  <div class="search-bar">
+    <span class="search-icon">🔍</span>
+    <input type="text" id="searchInput" placeholder="Search for Products, Brands and More" onkeyup="searchProducts()">
+  </div>
 </div>
+
+<div class="category-bar">
+  <div class="category-item active" onclick="filterCategory('all')">
+    <div class="cat-icon">🏪</div>All
+  </div>
+  <div class="category-item" onclick="filterCategory('cake')">
+    <div class="cat-icon">🎂</div>Cakes
+  </div>
+  <div class="category-item" onclick="filterCategory('perfume')">
+    <div class="cat-icon">🌸</div>Perfume
+  </div>
+  <div class="category-item" onclick="filterCategory('beauty')">
+    <div class="cat-icon">💄</div>Beauty
+  </div>
+  <div class="category-item" onclick="filterCategory('home')">
+    <div class="cat-icon">🏠</div>Home
+  </div>
+</div>
+
+<div class="banner">
+  <h2>🎉 Festival Sale Live!</h2>
+  <p>Best Quality Products | Home Delivery Available</p>
+</div>
+
 <div class="container">
-
-  <div class="product-card">
-    <img src="attar.jpg" alt="Shanaya Attar Combo">
-    <div class="info">
-      <span class="badge">Combo Pack - 2 Fragrance</span>
-      <div class="name">Shanaya & White Soul Concentrated Attar - 12ml Each</div>
-      <div class="price-row"><div class="price">300</div></div>
-      <form onsubmit="sendOrder(event, 'Shanaya Attar Combo 12ml Each', 300)">
-        <div class="form-group"><label>Apna Naam <span>*</span></label><input type="text" name="name" required placeholder="Rahul Kumar"></div>
-        <div class="form-group"><label>Mobile Number <span>*</span></label><input type="tel" name="mobile" required placeholder="9876543210" pattern="[0-9]{10}"></div>
-        <div class="form-group"><label>Full Address <span>*</span></label><textarea name="address" required placeholder="House No, Gali, Khaspur Tanda, Ambedkar Nagar"></textarea></div>
-        <button type="submit" class="btn">💬 WhatsApp pe Order Karein</button>
-      </form>
+  <div class="section-title">All Products</div>
+  <div class="product-grid" id="productGrid">
+    
+    <div class="product-card" data-category="perfume" data-name="shanaya attar">
+      <img src="attar.jpg" alt="Attar">
+      <div class="p-info">
+        <span class="p-badge">COMBO</span>
+        <div class="p-name">Shanaya & White Soul Attar 12ml Each</div>
+        <div class="p-price">300</div>
+        <button class="order-btn" onclick="openOrder('Shanaya Attar Combo 12ml Each', 300)">BUY NOW</button>
+      </div>
     </div>
-  </div>
 
-  <div class="product-card">
-    <img src="cake3.jpg" alt="Blue Rose Designer Cake">
-    <div class="info">
-      <span class="badge">Premium - Order 24 Hours Before</span>
-      <div class="name">Blue Rose Designer Birthday Cake - 1 KG</div>
-      <div class="price-row"><div class="price">500</div></div>
-      <form onsubmit="sendOrder(event, 'Blue Rose Designer Cake 1 KG', 500)">
-        <div class="form-group"><label>Apna Naam <span>*</span></label><input type="text" name="name" required placeholder="Rahul Kumar"></div>
-        <div class="form-group"><label>Mobile Number <span>*</span></label><input type="tel" name="mobile" required placeholder="9876543210" pattern="[0-9]{10}"></div>
-        <div class="form-group"><label>Full Address <span>*</span></label><textarea name="address" required placeholder="House No, Gali, Khaspur Tanda"></textarea></div>
-        <div class="form-group"><label>Cake pe Naam Likhe</label><input type="text" name="cakename" placeholder="Happy Birthday Rahul"></div>
-        <button type="submit" class="btn">💬 WhatsApp pe Order Karein</button>
-      </form>
+    <div class="product-card" data-category="cake" data-name="blue rose cake">
+      <img src="cake3.jpg" alt="Blue Rose Cake">
+      <div class="p-info">
+        <span class="p-badge">PREMIUM</span>
+        <div class="p-name">Blue Rose Designer Cake 1 KG</div>
+        <div class="p-price">500</div>
+        <button class="order-btn" onclick="openOrder('Blue Rose Designer Cake 1 KG', 500, true)">BUY NOW</button>
+      </div>
     </div>
-  </div>
 
-  <div class="product-card">
-    <img src="cake2.jpg" alt="Designer Vanilla Cake">
-    <div class="info">
-      <span class="badge">Premium - Order 24 Hours Before</span>
-      <div class="name">Designer Vanilla Birthday Cake - 1 KG</div>
-      <div class="price-row"><div class="price">500</div></div>
-      <form onsubmit="sendOrder(event, 'Designer Vanilla Cake 1 KG', 500)">
-        <div class="form-group"><label>Apna Naam <span>*</span></label><input type="text" name="name" required></div>
-        <div class="form-group"><label>Mobile Number <span>*</span></label><input type="tel" name="mobile" required pattern="[0-9]{10}"></div>
-        <div class="form-group"><label>Full Address <span>*</span></label><textarea name="address" required></textarea></div>
-        <div class="form-group"><label>Cake pe Naam Likhe</label><input type="text" name="cakename"></div>
-        <button type="submit" class="btn">💬 WhatsApp pe Order Karein</button>
-      </form>
+    <div class="product-card" data-category="cake" data-name="vanilla cake">
+      <img src="cake2.jpg" alt="Vanilla Cake">
+      <div class="p-info">
+        <span class="p-badge">PREMIUM</span>
+        <div class="p-name">Designer Vanilla Cake 1 KG</div>
+        <div class="p-price">500</div>
+        <button class="order-btn" onclick="openOrder('Designer Vanilla Cake 1 KG', 500, true)">BUY NOW</button>
+      </div>
     </div>
-  </div>
 
-  <div class="product-card">
-    <img src="cake.jpg" alt="Chocolate Birthday Cake">
-    <div class="info">
-      <span class="badge">Order 24 Hours Before</span>
-      <div class="name">Chocolate Birthday Cake - 1 KG</div>
-      <div class="price-row"><div class="price">500</div></div>
-      <form onsubmit="sendOrder(event, 'Chocolate Cake 1 KG', 500)">
-        <div class="form-group"><label>Apna Naam <span>*</span></label><input type="text" name="name" required></div>
-        <div class="form-group"><label>Mobile Number <span>*</span></label><input type="tel" name="mobile" required pattern="[0-9]{10}"></div>
-        <div class="form-group"><label>Full Address <span>*</span></label><textarea name="address" required></textarea></div>
-        <div class="form-group"><label>Cake pe Naam Likhe</label><input type="text" name="cakename"></div>
-        <button type="submit" class="btn">💬 WhatsApp pe Order Karein</button>
-      </form>
+    <div class="product-card" data-category="cake" data-name="chocolate cake">
+      <img src="cake.jpg" alt="Chocolate Cake">
+      <div class="p-info">
+        <span class="p-badge">BESTSELLER</span>
+        <div class="p-name">Chocolate Birthday Cake 1 KG</div>
+        <div class="p-price">500</div>
+        <button class="order-btn" onclick="openOrder('Chocolate Cake 1 KG', 500, true)">BUY NOW</button>
+      </div>
     </div>
-  </div>
 
-  <div class="product-card">
-    <img src="honey.jpg" alt="Bellavita Honey Oud">
-    <div class="info">
-      <div class="name">Bellavita Honey Oud Perfume - 20ml</div>
-      <div class="price-row"><div class="price">175</div><div class="mrp">349</div><div class="discount">49% OFF</div></div>
-      <form onsubmit="sendOrder(event, 'Bellavita Honey Oud Perfume 20ml', 175)">
-        <div class="form-group"><label>Apna Naam <span>*</span></label><input type="text" name="name" required></div>
-        <div class="form-group"><label>Mobile Number <span>*</span></label><input type="tel" name="mobile" required pattern="[0-9]{10}"></div>
-        <div class="form-group"><label>Full Address <span>*</span></label><textarea name="address" required></textarea></div>
-        <button type="submit" class="btn">💬 WhatsApp pe Order Karein</button>
-      </form>
+    <div class="product-card" data-category="perfume" data-name="honey oud perfume">
+      <img src="honey.jpg" alt="Honey Oud">
+      <div class="p-info">
+        <div class="p-name">Bellavita Honey Oud Perfume 20ml</div>
+        <div><span class="p-price">175</span><span class="p-mrp">349</span></div>
+        <div class="p-discount">49% off</div>
+        <button class="order-btn" onclick="openOrder('Bellavita Honey Oud Perfume 20ml', 175)">BUY NOW</button>
+      </div>
     </div>
-  </div>
 
-  <div class="product-card">
-    <img src="goree.jpg" alt="Goree Beauty Cream">
-    <div class="info">
-      <div class="name">Goree Beauty Cream with SPF 30 - Avocado & Aloevera</div>
-      <div class="price-row"><div class="price">450</div></div>
-      <form onsubmit="sendOrder(event, 'Goree Beauty Cream SPF 30', 450)">
-        <div class="form-group"><label>Apna Naam <span>*</span></label><input type="text" name="name" required></div>
-        <div class="form-group"><label>Mobile Number <span>*</span></label><input type="tel" name="mobile" required pattern="[0-9]{10}"></div>
-        <div class="form-group"><label>Full Address <span>*</span></label><textarea name="address" required></textarea></div>
-        <button type="submit" class="btn">💬 WhatsApp pe Order Karein</button>
-      </form>
+    <div class="product-card" data-category="beauty" data-name="goree cream">
+      <img src="goree.jpg" alt="Goree Cream">
+      <div class="p-info">
+        <div class="p-name">Goree Beauty Cream SPF 30</div>
+        <div class="p-price">450</div>
+        <button class="order-btn" onclick="openOrder('Goree Beauty Cream SPF 30', 450)">BUY NOW</button>
+      </div>
     </div>
-  </div>
 
-  <div class="product-card">
-    <img src="bellavita.jpg" alt="Bellavita White Oud">
-    <div class="info">
-      <div class="name">Bellavita White Oud Perfume - 20ml</div>
-      <div class="price-row"><div class="price">175</div></div>
-      <form onsubmit="sendOrder(event, 'Bellavita White Oud Perfume 20ml', 175)">
-        <div class="form-group"><label>Apna Naam <span>*</span></label><input type="text" name="name" required></div>
-        <div class="form-group"><label>Mobile Number <span>*</span></label><input type="tel" name="mobile" required pattern="[0-9]{10}"></div>
-        <div class="form-group"><label>Full Address <span>*</span></label><textarea name="address" required></textarea></div>
-        <button type="submit" class="btn">💬 WhatsApp pe Order Karein</button>
-      </form>
+    <div class="product-card" data-category="perfume" data-name="white oud perfume">
+      <img src="bellavita.jpg" alt="White Oud">
+      <div class="p-info">
+        <div class="p-name">Bellavita White Oud Perfume 20ml</div>
+        <div class="p-price">175</div>
+        <button class="order-btn" onclick="openOrder('Bellavita White Oud Perfume 20ml', 175)">BUY NOW</button>
+      </div>
     </div>
-  </div>
 
-  <div class="product-card">
-    <img src="bottle.jpg" alt="Millton Bottle Set">
-    <div class="info">
-      <div class="name">Millton Water Bottle Set - 6 Pcs</div>
-      <div class="price-row"><div class="price">165</div></div>
-      <form onsubmit="sendOrder(event, 'Millton Water Bottle Set 6 Pcs', 165)">
-        
+    <div class="product-card" data-category="home" data-name="millton bottle">
+      <img src="bottle.jpg" alt="Bottle Set">
+      <div class="p-info">
+        <div class="p-name">Millton Water Bottle Set 6 Pcs</div>
+        <div class="p-price">165</div>
+        <button class="order-btn" onclick="openOrder('Millton Water Bottle Set 6 Pcs', 165)">BUY NOW</button>
+      </div>
+    </div>
+
+    <div class="product-card" data-category="beauty" data-name="denver deo">
+      <img src="denver.jpg" alt="Denver Deo">
+      <div class="p-info">
+        <div class="p-name">Denver Hamilton Deodorant Spray</div>
+        <div class="p-price">225</div>
+        <button class="order-btn" onclick="openOrder('Denver Hamilton Deo', 225)">BUY NOW</button>
+      </div>
+    </div>
+
+    <div class="product-card" data-category="home" data-name="trolley bag">
+      <img src="trolley.jpg" alt="Trolley Bag">
+      <div class="p-info">
+        <div class="p-name">Fastrack Trolley Bag</div>
+        <div class="p-price">1000</div>
+        <button class="order-btn" onclick="openOrder('Fastrack Trolley Bag', 1000)">BUY NOW</button>
+      </div>
+    </div>
+
+    <div class="product-card" data-category="home" data-name="balti">
+      <img src="balti.jpg" alt="Balti">
+      <div class="p-info">
+        <div class="p-name">Plastic Balti Blue Design</div>
+        <div class="p-price">130</div>
+        <button class="order-btn" onclick="openOrder('Plastic Balti Blue Design', 130)">BUY NOW</button>
+      </div>
+    </div>
+
+    <div class="product-card" data-category="home" data-name="jhadu">
+      <img src="jhadu.jpg" alt="Jhadu">
+      <div class="p-info">
+        <div class="p-name">Plastic Jhadu Premium Quality</div>
+        <div class="p-price">120</div>
+        <button class="order-btn" onclick="openOrder('Plastic Jhadu Premium', 120)">BUY NOW</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="footer">
+  <div class="footer-links">
+    <a href="tel:8780576603">📞 Call Us</a>
+    <a href="https://wa.me/918780576603">💬 WhatsApp</a>
+  </div>
+  <div class="shop-details">
+    <strong>Pakija Shringar Place</strong><br>
+    Khaspur Tanda, Ambedkar Nagar, UP - 224129<br>
+    Mobile: 8780576603 | Timing: 9AM - 9PM<br>
+    Home Delivery Available in Khaspur Tanda
+  </div>
+</div>
+
+<div class="modal" id="orderModal">
+  <div class="modal-content">
+    <span class="close-btn" onclick="closeOrder()">&times;</span>
+    <div class="modal-header">Complete Your Order</div>
+    <div id="orderProduct" style="color:#878787;font-size:14px;margin-bottom:15px"></div>
+    <form onsubmit="sendOrder(event)">
+      <div class="form-group">
+        <label>Your Name <span>*</span></label>
+        <input type="text" id="custName" required placeholder="Enter Your Name">
+      </div>
+      <div class="form-group">
+        <label>Your Mobile Number <span>*</span></label>
+        <input type="tel" id="custMobile" required placeholder="Enter Your Mobile Number" pattern="[0-9]{10}">
+      </div>
+      <div class="form-group">
+        <label>Full Address <span>*</span></label>
+        <textarea id="custAddress" required placeholder="House No, Gali, Khaspur Tanda, Ambedkar Nagar"></textarea>
+      </div>
+      <div class="form-group" id="cakeNameField" style="display:none">
+        <label>Name on Cake</label>
+        <input type="text" id="cakeName" placeholder="Happy Birthday Your Name">
+      </div>
+      <button type="submit" class="submit-btn">💬 WhatsApp pe Order Karein</button>
+    </form>
+  </div>
+</div>
+
+<script>
+let currentProduct = '';
+let currentPrice = 0;
+let isCake = false;
+
+function openOrder(product, price, cake = false) {
+  currentProduct = product;
+  currentPrice = price;
+  isCake = cake;
+  document.getElementById('orderProduct').innerHTML = `<strong>${product}</strong> - ₹${price}`;
+  document.getElementById('cakeNameField').style.display = cake ? 'block' : 'none';
+  document.getElementById('orderModal').classList.add('active');
+}
+
+function closeOrder() {
+  document.getElementById('orderModal').classList.remove('active');
+  document.getElementById('custName').value = '';
+  document.getElementById('custMobile').value = '';
+  document.getElementById('custAddress').value = '';
+  document.getElementById('cakeName').value = '';
+}
+
+function sendOrder(e) {
+  e.preventDefault();
+  const name = document.getElementById('custName').value.trim();
+  const mobile = document.getElementById('custMobile').value.trim();
+  const address = document.getElementById('custAddress').value.trim();
+  const cakename = document.getElementById('cakeName').value.trim();
+  
+  let msg = `*🛍️ New Order - Pakija Shringar Place*%0A%0A`;
+  msg += `*📦 Product:* ${currentProduct}%0A`;
+  msg += `*💰 Price:* ₹${currentPrice}%0A%0A`;
+  msg += `*👤 Customer Details:*%0A`;
+  msg += `Name: ${name}%0A`;
+  msg += `Mobile: ${mobile}%0A`;
+  msg += `Address: ${address}%0A`;
+  if(cakename) msg += `*🎂 Name on Cake:* ${cakename}%0A`;
+  msg += `%0A_Order from Website_`;
+  
+  window.open(`https://wa.me/918780576603?text=${msg}`, '_blank');
+  closeOrder();
+}
+
+function filterCategory(cat) {
+  document.querySelectorAll('.category-item').forEach(item => item.classList.remove('active'));
+  event.target.closest('.category-item').classList.add('active');
+  
+  document.querySelectorAll('.product-card').forEach(card => {
+    if(cat === 'all' || card.dataset.category === cat) {
+      card.style.display = 'block';
+    } else {
+      card.style.display = 'none';
+    }
+  });
+}
+
+function searchProducts() {
+  const query = document.getElementById('searchInput').value.toLowerCase();
+  document.querySelectorAll('.product-card').forEach(card => {
+    const name = card.dataset.name;
+    card.style.display = name.includes(query) ? 'block' : 'none';
+  });
+}
+
+document.getElementById('orderModal').addEventListener('click', function(e) {
+  if(e.target === this) closeOrder();
+});
+</script>
+
+</body>
+        </html>
