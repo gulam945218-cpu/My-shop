@@ -3,45 +3,157 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pakija Shringar Place</title>
+<title>Pakija Shringar Place - Khaspur Tanda, Ambedkar Nagar</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{
-  font-family:'Segoe UI',sans-serif;
-  background:linear-gradient(135deg,#ff9a9e 0%,#fecfef 100%);
-  min-height:100vh;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  padding:20px;
-}
-.container{
-  background:white;
-  padding:40px 30px;
-  border-radius:20px;
-  box-shadow:0 10px 30px rgba(0,0,0,0.2);
-  text-align:center;
-  max-width:400px;
-  width:100%;
-}
-.logo{font-size:32px;color:#d63384;margin-bottom:10px;font-weight:700}
-.tagline{color:#666;font-size:16px;margin-bottom:25px}
-.contact{background:#f8f9fa;padding:15px;border-radius:12px;margin-top:20px}
-.contact p{color:#333;font-size:18px;font-weight:600}
-.btn{display:inline-block;margin:10px 5px;padding:12px 25px;background:#25d366;color:white;text-decoration:none;border-radius:50px;font-weight:600}
-.btn.call{background:#d63384}
+body{font-family:'Segoe UI',Tahoma,sans-serif;background:#f1f3f6}
+.header{background:linear-gradient(135deg,#d63384,#c2185b);color:white;padding:18px 15px;text-align:center;position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,0.15)}
+.shop-name{font-size:26px;font-weight:700;margin-bottom:4px}
+.shop-tagline{font-size:13px;opacity:0.95}
+.container{max-width:520px;margin:0 auto;padding:12px}
+.product-card{background:white;border-radius:12px;margin:16px 0;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.08)}
+.product-card img{width:100%;height:300px;object-fit:cover;background:#f8f8f8}
+.info{padding:16px}
+.name{font-size:17px;font-weight:600;color:#212121;margin-bottom:8px;line-height:1.3}
+.price-row{display:flex;align-items:center;gap:8px;margin-bottom:12px;flex-wrap:wrap}
+.price{font-size:22px;font-weight:700;color:#000}
+.price::before{content:"₹"}
+.mrp{font-size:15px;color:#878787;text-decoration:line-through}
+.mrp::before{content:"₹"}
+.discount{color:#388e3c;font-size:14px;font-weight:600}
+.badge{background:#ff6161;color:white;font-size:12px;padding:4px 10px;border-radius:4px;display:inline-block;margin-bottom:10px;font-weight:600}
+.form-group{margin-bottom:12px}
+.form-group label{font-size:13px;color:#333;display:block;margin-bottom:5px;font-weight:600}
+.form-group label span{color:#d63384}
+.form-group input,.form-group textarea{width:100%;padding:11px;border:1.5px solid #ddd;border-radius:8px;font-size:15px;font-family:inherit;transition:border 0.2s}
+.form-group input:focus,.form-group textarea:focus{outline:none;border-color:#d63384}
+.form-group textarea{resize:vertical;min-height:70px}
+.btn{display:block;width:100%;padding:14px;background:#25d366;color:white;text-align:center;text-decoration:none;font-weight:700;border-radius:8px;font-size:16px;border:none;cursor:pointer;margin-top:8px;transition:transform 0.1s}
+.btn:active{transform:scale(0.98)}
+.btn.call{background:#d63384;margin-top:10px}
+.footer{background:white;margin-top:20px;padding:24px 16px;text-align:center;border-radius:12px}
+.address{background:#fff3f8;padding:16px;border-radius:10px;margin:16px 0;border:2px solid #ffcce5;text-align:left}
+.address strong{color:#d63384;font-size:15px}
+.shop-info{color:#666;font-size:14px;line-height:1.8;margin:12px 0}
+.divider{height:1px;background:#eee;margin:20px 0}
 </style>
 </head>
 <body>
-<div class="container">
-  <div class="logo">Pakija Shringar Place</div>
-  <div class="tagline">Makeup • Cosmetics • Shringar 🎀</div>
-  <div class="contact">
-    <p>📞 Contact Us</p>
-    <p>8780576603</p>
-  </div>
-  <a href="https://wa.me/918780576603?text=Hello%20Pakija%20Shringar%20Place" class="btn">WhatsApp</a>
-  <a href="tel:8780576603" class="btn call">Call Now</a>
+<div class="header">
+  <div class="shop-name">Pakija Shringar Place</div>
+  <div class="shop-tagline">Best Quality | Affordable Price | Trusted Shop</div>
 </div>
-</body>
-</html>
+<div class="container">
+
+  <div class="product-card">
+    <img src="attar.jpg" alt="Shanaya Attar Combo">
+    <div class="info">
+      <span class="badge">Combo Pack - 2 Fragrance</span>
+      <div class="name">Shanaya & White Soul Concentrated Attar - 12ml Each</div>
+      <div class="price-row"><div class="price">300</div></div>
+      <form onsubmit="sendOrder(event, 'Shanaya Attar Combo 12ml Each', 300)">
+        <div class="form-group"><label>Apna Naam <span>*</span></label><input type="text" name="name" required placeholder="Rahul Kumar"></div>
+        <div class="form-group"><label>Mobile Number <span>*</span></label><input type="tel" name="mobile" required placeholder="9876543210" pattern="[0-9]{10}"></div>
+        <div class="form-group"><label>Full Address <span>*</span></label><textarea name="address" required placeholder="House No, Gali, Khaspur Tanda, Ambedkar Nagar"></textarea></div>
+        <button type="submit" class="btn">💬 WhatsApp pe Order Karein</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="product-card">
+    <img src="cake3.jpg" alt="Blue Rose Designer Cake">
+    <div class="info">
+      <span class="badge">Premium - Order 24 Hours Before</span>
+      <div class="name">Blue Rose Designer Birthday Cake - 1 KG</div>
+      <div class="price-row"><div class="price">500</div></div>
+      <form onsubmit="sendOrder(event, 'Blue Rose Designer Cake 1 KG', 500)">
+        <div class="form-group"><label>Apna Naam <span>*</span></label><input type="text" name="name" required placeholder="Rahul Kumar"></div>
+        <div class="form-group"><label>Mobile Number <span>*</span></label><input type="tel" name="mobile" required placeholder="9876543210" pattern="[0-9]{10}"></div>
+        <div class="form-group"><label>Full Address <span>*</span></label><textarea name="address" required placeholder="House No, Gali, Khaspur Tanda"></textarea></div>
+        <div class="form-group"><label>Cake pe Naam Likhe</label><input type="text" name="cakename" placeholder="Happy Birthday Rahul"></div>
+        <button type="submit" class="btn">💬 WhatsApp pe Order Karein</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="product-card">
+    <img src="cake2.jpg" alt="Designer Vanilla Cake">
+    <div class="info">
+      <span class="badge">Premium - Order 24 Hours Before</span>
+      <div class="name">Designer Vanilla Birthday Cake - 1 KG</div>
+      <div class="price-row"><div class="price">500</div></div>
+      <form onsubmit="sendOrder(event, 'Designer Vanilla Cake 1 KG', 500)">
+        <div class="form-group"><label>Apna Naam <span>*</span></label><input type="text" name="name" required></div>
+        <div class="form-group"><label>Mobile Number <span>*</span></label><input type="tel" name="mobile" required pattern="[0-9]{10}"></div>
+        <div class="form-group"><label>Full Address <span>*</span></label><textarea name="address" required></textarea></div>
+        <div class="form-group"><label>Cake pe Naam Likhe</label><input type="text" name="cakename"></div>
+        <button type="submit" class="btn">💬 WhatsApp pe Order Karein</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="product-card">
+    <img src="cake.jpg" alt="Chocolate Birthday Cake">
+    <div class="info">
+      <span class="badge">Order 24 Hours Before</span>
+      <div class="name">Chocolate Birthday Cake - 1 KG</div>
+      <div class="price-row"><div class="price">500</div></div>
+      <form onsubmit="sendOrder(event, 'Chocolate Cake 1 KG', 500)">
+        <div class="form-group"><label>Apna Naam <span>*</span></label><input type="text" name="name" required></div>
+        <div class="form-group"><label>Mobile Number <span>*</span></label><input type="tel" name="mobile" required pattern="[0-9]{10}"></div>
+        <div class="form-group"><label>Full Address <span>*</span></label><textarea name="address" required></textarea></div>
+        <div class="form-group"><label>Cake pe Naam Likhe</label><input type="text" name="cakename"></div>
+        <button type="submit" class="btn">💬 WhatsApp pe Order Karein</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="product-card">
+    <img src="honey.jpg" alt="Bellavita Honey Oud">
+    <div class="info">
+      <div class="name">Bellavita Honey Oud Perfume - 20ml</div>
+      <div class="price-row"><div class="price">175</div><div class="mrp">349</div><div class="discount">49% OFF</div></div>
+      <form onsubmit="sendOrder(event, 'Bellavita Honey Oud Perfume 20ml', 175)">
+        <div class="form-group"><label>Apna Naam <span>*</span></label><input type="text" name="name" required></div>
+        <div class="form-group"><label>Mobile Number <span>*</span></label><input type="tel" name="mobile" required pattern="[0-9]{10}"></div>
+        <div class="form-group"><label>Full Address <span>*</span></label><textarea name="address" required></textarea></div>
+        <button type="submit" class="btn">💬 WhatsApp pe Order Karein</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="product-card">
+    <img src="goree.jpg" alt="Goree Beauty Cream">
+    <div class="info">
+      <div class="name">Goree Beauty Cream with SPF 30 - Avocado & Aloevera</div>
+      <div class="price-row"><div class="price">450</div></div>
+      <form onsubmit="sendOrder(event, 'Goree Beauty Cream SPF 30', 450)">
+        <div class="form-group"><label>Apna Naam <span>*</span></label><input type="text" name="name" required></div>
+        <div class="form-group"><label>Mobile Number <span>*</span></label><input type="tel" name="mobile" required pattern="[0-9]{10}"></div>
+        <div class="form-group"><label>Full Address <span>*</span></label><textarea name="address" required></textarea></div>
+        <button type="submit" class="btn">💬 WhatsApp pe Order Karein</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="product-card">
+    <img src="bellavita.jpg" alt="Bellavita White Oud">
+    <div class="info">
+      <div class="name">Bellavita White Oud Perfume - 20ml</div>
+      <div class="price-row"><div class="price">175</div></div>
+      <form onsubmit="sendOrder(event, 'Bellavita White Oud Perfume 20ml', 175)">
+        <div class="form-group"><label>Apna Naam <span>*</span></label><input type="text" name="name" required></div>
+        <div class="form-group"><label>Mobile Number <span>*</span></label><input type="tel" name="mobile" required pattern="[0-9]{10}"></div>
+        <div class="form-group"><label>Full Address <span>*</span></label><textarea name="address" required></textarea></div>
+        <button type="submit" class="btn">💬 WhatsApp pe Order Karein</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="product-card">
+    <img src="bottle.jpg" alt="Millton Bottle Set">
+    <div class="info">
+      <div class="name">Millton Water Bottle Set - 6 Pcs</div>
+      <div class="price-row"><div class="price">165</div></div>
+      <form onsubmit="sendOrder(event, 'Millton Water Bottle Set 6 Pcs', 165)">
+        
