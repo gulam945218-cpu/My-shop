@@ -429,6 +429,22 @@ document.getElementById('orderModal').addEventListener('click', function(e) {
   if(e.target === this) closeOrder();
 });
 </script>
-
+<!-- Pakija Shringar Palace - Welcome Effect -->
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+<script>
+  window.onload = function() {
+    // Site khulte hi confetti giregi
+    confetti({
+      particleCount: 150,
+      spread: 100,
+      origin: { y: 0.6 }
+    });
+    
+    // Welcome message + tera number
+    setTimeout(() => {
+      alert("🎉 Welcome to Pakija Shringar Palace, Khaspur Tanda! Festival Sale Live - Order Now: 8780576603");
+    }, 500);
+  }
+</script>
 </body>
       </html>
